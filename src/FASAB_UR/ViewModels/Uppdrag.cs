@@ -5,22 +5,19 @@ namespace FASAB_UR.ViewModels
 {
     public class Uppdrag
     {
-        [Required]
-
+        [Required(ErrorMessage = "Du har glömt att ange ett datum.")]
         public DateTime Date { get; set; }
 
-        [Required]
-
+        [Required(ErrorMessage = "Du har glömt att ange uppdragets art.")]
         public string Uppdragsart { get; set; }
 
-        [Required]
-
+        [Required(ErrorMessage = "Du har glömt att ange hur många timmar du arbetat.")]
         public int WorkedHours { get; set; }
-        [Required]
-        
-        public int VacationCompPercent { get; set; }
-        [Required]
 
+        [Required]        
+        public int VacationCompPercent { get; set; }
+
+        [Required]
         public DateTime StartTime { get; set; }
         [Required]
 
