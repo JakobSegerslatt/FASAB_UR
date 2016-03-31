@@ -11,8 +11,10 @@ namespace FASAB_UR.ViewModels
         #region Personuppgifter
         [Required(ErrorMessage = "Du måste skriva in ditt namn")]
         public string Name { get; set; }
-        [Required]
-        
+
+        [Required(ErrorMessage = "Ange personnummer i formatet ÅÅÅÅMMDDXXXX")]
+        [Display(Name = "Personnummer")]
+        [Range(12,12, ErrorMessage = "Ange personnummer i formatet ÅÅÅÅMMDDXXXX")]
         public int SSN { get; set; }
         [Required]
         public int Phone { get; set; }
