@@ -17,7 +17,7 @@ namespace FASAB_UR.ViewModels
 
         public int WorkedHours { get; set; }
         [Required]
-
+        
         public int VacationCompPercent { get; set; }
         [Required]
 

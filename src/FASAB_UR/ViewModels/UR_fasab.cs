@@ -15,7 +15,9 @@ namespace FASAB_UR.ViewModels
         
         public int SSN { get; set; }
         [Required]
+        public int Phone { get; set; }
 
+        [Required]
         public string Address { get; set; }
         [Required]
 
@@ -26,9 +28,7 @@ namespace FASAB_UR.ViewModels
         [Required]
 
         public string Email { get; set; }
-        [Required]
 
-        public int Phone { get; set; }
         #endregion
 
         #region Övriga uppgifter
@@ -44,7 +44,6 @@ namespace FASAB_UR.ViewModels
         [Required]
 
         public DateTime DateSignedByUser { get; set; }
-        [Required]
 
         public string SignatureUser { get; set; }
         [Required]

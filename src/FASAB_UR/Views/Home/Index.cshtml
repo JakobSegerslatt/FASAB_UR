@@ -1,0 +1,51 @@
+﻿@model UR_fasab
+@{
+    ViewBag.Title = "Uppdragsredovisning, formulär";
+}
+<div class="row centered-form">
+    <h1>Uppdragsredovisning, basformulär</h1>
+    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form asp-controller="Home" asp-action="Index">
+                    <div asp-validation-summary="ValidationSummary.All"></div>
+                    <div class="col-xs-6 col-sm-4 col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Name"></label><br />
+                            <input asp-for="Name" placeholder="Namn" class="create-input" /><br />
+                            <label asp-for="SSN"></label><br />
+                            <input asp-for="SSN" placeholder="Personnummer" class="create-input" /><br />
+                            <span asp-validation-for="SSN" class="has-error"></span><br />
+                            <label asp-for="Phone"></label><br />
+                            <input asp-for="Phone" placeholder="Telefon/Mobil" class="create-input" /><br />
+                            <span asp-validation-for="Phone" class="has-error"></span><br />
+                            <label asp-for="Email"></label><br />
+                            <input asp-for="Email" placeholder="Epost" class="create-input" /><br />
+                            <span asp-validation-for="Email" class="has-error"></span><br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-md-4">
+                            <div class="form-group">
+                                <label asp-for="Address"></label><br />
+                                <input asp-for="Address" placeholder="Gatuadress" class="create-input" /><br />
+                                <span asp-validation-for="Address" class="has-error"></span><br />
+                                <label asp-for="ZipCode"></label><br />
+                                <input asp-for="ZipCode" placeholder="Postnummer" class="create-input" /><br />
+                                <span asp-validation-for="ZipCode" class="has-error"></span><br />
+                                <label asp-for="City"></label><br />
+                                <input asp-for="City" placeholder="Stad" class="create-input" /><br />
+                                <span asp-validation-for="City" class="has-error"></span><br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary btn-lg" value="OK" />
+                    <script src="~/script/jquery.min.js"></script>
+                    <script src="~/script/jquery.validate.min.js"></script>
+                    <script src="~/script/jquery.validate.unobtrusive.min.js"></script>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
