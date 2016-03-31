@@ -3,39 +3,122 @@
     ViewBag.Title = "Uppdragsredovisning, formulär";
 }
 <div class="row centered-form">
-    <h1>Uppdragsredovisning, basformulär</h1>
-    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+    <div class="col-xs-10 col-xs-offset-1">
+        <h1>Uppdragsredovisning, basformulär</h1>
         <div class="panel panel-default">
             <div class="panel-body">
                 <form asp-controller="Home" asp-action="Index">
                     <div asp-validation-summary="ValidationSummary.All"></div>
-                    <div class="col-xs-6 col-sm-4 col-md-4">
+                    <div class="row">
                         <div class="form-group">
-                            <label asp-for="Name"></label><br />
-                            <input asp-for="Name" placeholder="Namn" class="create-input" /><br />
-                            <label asp-for="SSN"></label><br />
-                            <input asp-for="SSN" placeholder="Personnummer" class="create-input" /><br />
-                            <span asp-validation-for="SSN" class="has-error"></span><br />
-                            <label asp-for="Phone"></label><br />
-                            <input asp-for="Phone" placeholder="Telefon/Mobil" class="create-input" /><br />
-                            <span asp-validation-for="Phone" class="has-error"></span><br />
-                            <label asp-for="Email"></label><br />
-                            <input asp-for="Email" placeholder="Epost" class="create-input" /><br />
-                            <span asp-validation-for="Email" class="has-error"></span><br />
+                            <div class="col-xs-6">
+                                <label asp-for="Name"></label><br />
+                                <input asp-for="Name" placeholder="Namn" class="create-input" /><br /><br />
+                                <label asp-for="SSN"></label><br />
+                                <input asp-for="SSN" placeholder="Personnummer" class="create-input" /><br />
+                                <span asp-validation-for="SSN" class="has-error"></span><br />
+                            </div>
+                            <div class="col-xs-6">
+                                <label asp-for="Phone"></label><br />
+                                <input asp-for="Phone" placeholder="Telefon/Mobil" class="create-input" /><br />
+                                <span asp-validation-for="Phone" class="has-error"></span><br />
+                                <label asp-for="Email"></label><br />
+                                <input asp-for="Email" placeholder="Epost" class="create-input" /><br />
+                                <span asp-validation-for="Email" class="has-error"></span><br />
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-6 col-sm-4 col-md-4">
-                            <div class="form-group">
+                        <div class="form-group">
+                            <div class="col-xs-4">
                                 <label asp-for="Address"></label><br />
                                 <input asp-for="Address" placeholder="Gatuadress" class="create-input" /><br />
                                 <span asp-validation-for="Address" class="has-error"></span><br />
+                            </div>
+                            <div class="col-xs-4">
                                 <label asp-for="ZipCode"></label><br />
                                 <input asp-for="ZipCode" placeholder="Postnummer" class="create-input" /><br />
                                 <span asp-validation-for="ZipCode" class="has-error"></span><br />
+                            </div>
+                            <div class="col-xs-4">
                                 <label asp-for="City"></label><br />
                                 <input asp-for="City" placeholder="Stad" class="create-input" /><br />
                                 <span asp-validation-for="City" class="has-error"></span><br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <label asp-for="Month"></label><br />
+                                <input asp-for="Month" placeholder="Månad" class="create-input" /><br />
+                                <span asp-validation-for="Month" class="has-error"></span><br />
+                            </div>
+                            <div class="col-xs-6">
+                                <label asp-for="Region"></label><br />
+                                <input asp-for="Region" placeholder="Region/avd/verks.krets" class="create-input" /><br />
+                                <span asp-validation-for="Region" class="has-error"></span><br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h2>Lägg till uppdrag</h2>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label asp-for="Uppdrag[0].Date"></label><br />
+                                <input asp-for="Uppdrag[0].Date" placeholder="Datum" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].Date" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].Uppdragsart"></label><br />
+                                <input asp-for="Uppdrag[0].Uppdragsart" placeholder="Uppdragsart" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].Uppdragsart" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].WorkedHours"></label><br />
+                                <input asp-for="Uppdrag[0].WorkedHours" placeholder="Arbetade timmar" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].WorkedHours" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].VacationCompPercent"></label><br />
+                                <input asp-for="Uppdrag[0].VacationCompPercent" placeholder="Semesterersättning procent" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].VacationCompPercent" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].StartTime"></label><br />
+                                <input asp-for="Uppdrag[0].StartTime" placeholder="Avresa kl:" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].StartTime" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].EndTime"></label><br />
+                                <input asp-for="Uppdrag[0].EndTime" placeholder="Åter kl:" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].EndTime" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].TravelFee"></label><br />
+                                <input asp-for="Uppdrag[0].TravelFee" placeholder="Researvode" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].TravelFee" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].Kostavdrag_antal"></label><br />
+                                <input asp-for="Uppdrag[0].Kostavdrag_antal" placeholder="Kostavdrag antal" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].Kostavdrag_antal" class="has-error"></span><br />
+
+                                <label asp-for="Uppdrag[0].CarCompKMTaxfree"></label><br />
+                                <input asp-for="Uppdrag[0].CarCompKMTaxfree" placeholder="Bilersättning (KM), skattefri" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].CarCompKMTaxfree" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].CarCompKMTax"></label><br />
+                                <input asp-for="Uppdrag[0].CarCompKMTax" placeholder="Bilersättning (KM), skattepliktlig" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].CarCompKMTax" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].OwnExpenses"></label><br />
+                                <input asp-for="Uppdrag[0].OwnExpenses" placeholder="Utlägg" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].OwnExpenses" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].Vgren"></label><br />
+                                <input asp-for="Uppdrag[0].Vgren" placeholder="Verksamhetsgren" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].Vgren" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].Kställe"></label><br />
+                                <input asp-for="Uppdrag[0].Kställe" placeholder="K-ställe" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].Kställe" class="has-error"></span><br />
+                                <label asp-for="Uppdrag[0].Project"></label><br />
+                                <input asp-for="Uppdrag[0].Project" placeholder="Projekt" class="create-input" /><br />
+                                <span asp-validation-for="Uppdrag[0].Project" class="has-error"></span><br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <h2>Signering</h2>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label asp-for="SignatureUser"></label><br />
+                                <input asp-for="SignatureUser" placeholder="Signatur" class="create-input" /><br />
+                                <span asp-validation-for="SignatureUser" class="has-error"></span><br />
                             </div>
                         </div>
                     </div>

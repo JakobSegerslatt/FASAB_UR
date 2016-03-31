@@ -4,10 +4,253 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
+    <meta charset="utf-8">
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="~/javascript/bootstrap.js"></script>
+    <script src="~/javascript/jquery.js"></script>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Om oss" property="og:title">
+    <meta content="http://www.sef.se/static/images/elektrikernas/og.png" property="og:image">
+    <meta content="http://www.sef.se/om-oss1/" property="og:url">
+    <meta content="sv_SE" property="og:locale">
+    <meta content="" property="og:description">
+    <link href="http://www.sef.se/static/images/elektrikernas/favicon-180.png" rel="apple-touch-icon">
+    <link href="http://www.sef.se/static/images/elektrikernas/favicon-180.png" type="image/png" rel="icon">
+    <link type="image/x-icon" href="http://www.sef.se/static/images/elektrikernas/favicon-32.png" rel="shortcut icon">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,400italic">
+    <link rel="stylesheet" href="http://www.sef.se/static/styles/app.elektrikernas.css?v=a@Model.Layout.ApplicationVersion">
+
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
+    <header role="banner" id="header">
+        <div class="wrap">
+            <div class="header-banner">
+                <ul id="nav-skip">
+                    <li>
+                        <a aria-expanded="false" role="button" class="nav-skip-link nav-skip-link--nav" aria-controls="nav" href="#menu">
+                            <span aria-hidden="true" class="icon icon-nav"></span>
+                            <span class="nav-skip-text"><span>Gå till </span>meny</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a aria-expanded="false" role="button" class="nav-skip-link nav-skip-link--search" aria-controls="search" href="#search-query">
+                            <span aria-hidden="true" class=" icon icon-search"></span>
+                            <span class="nav-skip-text"><span>Gå till </span>sök</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a role="button" class="nav-skip-link nav-skip-link--content" href="#content">
+                            <span aria-hidden="true" class=" icon icon-content"></span>
+                            <span class="nav-skip-text"><span>Gå till </span>innehåll</span>
+                        </a>
+                    </li>
+                </ul>
+                <a class="header-logotype" href="/"><img alt="Svenska Elektrikerförbundet (till startsidan)" src="http://www.sef.se/static/images/elektrikernas/logotype.png"></a>
+            </div>
+            <div class="header-search">
+                <span aria-hidden="true" class="icon icon-search"></span>
+                <form class="header-search-form" aria-expanded="true" role="search" action="/sok/" method="GET" id="search" novalidate="novalidate">
+                    <label class="visually-hidden" for="search-query">Sök</label>
+                    <input type="search" class="form-field header-search-field ui-autocomplete-input" placeholder="Vad letar du efter?" id="search-query" name="q" autocomplete="off">
+                    <input type="submit" class="header-search-button" value="Sök">
+                </form>
+            </div>
+        </div>
+    </header>
+    <nav role="navigation" class="nav" id="nav">
+        <div class="wrap nav-wrap">
+
+            <div aria-label="Region" class="nav-region">
+                <div class="drop">
+                    <a aria-expanded="false" aria-controls="region-drop" role="button" class="drop-button" href="/kontakt/">Kontakta oss<span aria-hidden="true" class="icon"></span></a>
+                    <div id="region-drop" class="drop-panel drop-panel--wide">
+                        <ul class="drop-list">
+                            <li>
+                                <a href="/kontakt/region-mitt/">Region Mitt</a>
+                            </li>
+                            <li>
+                                <a href="/kontakt/region-syd-1/">Region Syd</a>
+                            </li>
+                            <li>
+                                <a href="/kontakt/region-vast/">Region Väst</a>
+                            </li>
+                            <li>
+                                <a href="/kontakt/region-nord2/">Region Nord</a>
+                            </li>
+                            <li>
+                                <a href="/kontakt/forbundskontoret/">Förbundskontoret</a>
+                            </li>
+                        </ul>
+                        <a href="/kontakt/" class="drop-list-showall">Visa karta</a>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-global nav-level-0" aria-label="Huvudmeny">
+                <li class="nav-children">
+                    <a id="menu" href="/medlem/" class="nav-anchor nav-anchor--global nav-anchor--first"><span>Medlem</span></a><a aria-expanded="false" role="button" data-level="1" data-id="21151" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-local nav-level-1" aria-label="Undermeny">
+                        <li class="nav-children"><a href="/medlem/medlemielektrikerna/" class="nav-anchor nav-anchor--local"><span>Medlem i Elektrikerna</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22491" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/medlem/kollektivavtal/" class="nav-anchor nav-anchor--local"><span>Kollektivavtal</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22482" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/medlem/larling1/" class="nav-anchor nav-anchor--local"><span>Lärling</span></a><a aria-expanded="false" role="button" data-level="2" data-id="21700" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/medlem/forsakringar/" class="nav-anchor nav-anchor--local"><span>Försäkringar</span></a><a aria-expanded="false" role="button" data-level="2" data-id="21156" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/medlem/ackord/" class="nav-anchor nav-anchor--local"><span>Ackord</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22495" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li><a href="/medlem/studier/" class="nav-anchor nav-anchor--local"><span>Studier</span></a></li>
+                        <li class="nav-children"><a href="/medlem/arbetsmiljo/" class="nav-anchor nav-anchor--local"><span>Arbetsmiljö</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22499" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/medlem/arbete-utomlands/" class="nav-anchor nav-anchor--local"><span>Arbete utomlands</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22504" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/medlem/mer-for-dig-som-ar2/" class="nav-anchor nav-anchor--local"><span>Mer för dig som är...</span></a><a aria-expanded="false" role="button" data-level="2" data-id="27793" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                    </ul>
+                </li>
+                <li class="nav-children">
+                    <a href="/fortroendevald/" class="nav-anchor nav-anchor--global"><span>Facket lokalt</span></a><a aria-expanded="false" role="button" data-level="1" data-id="27791" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-local nav-level-1" aria-label="Undermeny">
+                        <li><a href="/fortroendevald/Verksamhetskretsar/" class="nav-anchor nav-anchor--local"><span>Hitta din verksamhetskrets</span></a></li>
+                        <li><a href="/fortroendevald/vad-gor-verksamhetskretsarna/" class="nav-anchor nav-anchor--local"><span>Vad gör verksamhetskretsarna?</span></a></li>
+                        <li class="nav-children"><a href="/fortroendevald/lokala-nyheter/" class="nav-anchor nav-anchor--local"><span>Lokala nyheter</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22967" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li><a href="/fortroendevald/uppdrag/" class="nav-anchor nav-anchor--local"><span>Uppdrag i förbundet</span></a></li>
+                        <li><a href="/fortroendevald/utbildning-fortroendevald/" class="nav-anchor nav-anchor--local"><span>Utbildning förtroendevald</span></a></li>
+                        <li class="nav-children"><a href="/fortroendevald/klubbverksamhet/" class="nav-anchor nav-anchor--local"><span>Klubbverksamhet</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22809" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                    </ul>
+                </li>
+                <li class="nav-children">
+                    <a href="/arbetsgivare/" class="nav-anchor nav-anchor--global"><span>Arbetsgivare</span></a><a aria-expanded="false" role="button" data-level="1" data-id="21159" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-local nav-level-1" aria-label="Undermeny">
+                        <li class="nav-children"><a href="/arbetsgivare/kollektivavtal/" class="nav-anchor nav-anchor--local"><span>Kollektivavtal</span></a><a aria-expanded="false" role="button" data-level="2" data-id="27730" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/arbetsgivare/larling/" class="nav-anchor nav-anchor--local"><span>Att anställa en lärling</span></a><a aria-expanded="false" role="button" data-level="2" data-id="21161" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/arbetsgivare/avgifter/" class="nav-anchor nav-anchor--local"><span>Avgifter</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22857" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/arbetsgivare/arbetsmiljo/" class="nav-anchor nav-anchor--local"><span>Att skapa en bra arbetsmiljö</span></a><a aria-expanded="false" role="button" data-level="2" data-id="21485" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/arbetsgivare/ackord/" class="nav-anchor nav-anchor--local"><span>Tjäna på ackord</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22858" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li><a href="/arbetsgivare/lonerevision/" class="nav-anchor nav-anchor--local"><span>Lönerevision</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-children">
+                    <a href="/om-oss1/" class="nav-anchor nav-anchor--global"><span>Om oss</span></a><a aria-expanded="true" role="button" data-level="1" data-id="21065" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-local nav-level-1" aria-label="Undermeny">
+                        <li class="nav-children">
+                            <a href="/om-oss1/nyheter/" class="nav-anchor nav-anchor--local"><span>Nyheter</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22927" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-level-2">
+                                <li><a href="/om-oss1/nyheter/2015/" class="nav-anchor nav-anchor--local"><span>2015</span></a></li>
+                                <li><a href="/om-oss1/nyheter/2016/" class="nav-anchor nav-anchor--local"><span>2016</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-children">
+                            <a href="/om-oss1/var-organisation-malin/" class="nav-anchor nav-anchor--local"><span>Vår organisation</span></a><a aria-expanded="false" role="button" data-level="2" data-id="21068" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-level-2">
+                                <li><a href="/om-oss1/var-organisation-malin/vara-varderingar/" class="nav-anchor nav-anchor--local"><span>Våra värderingar</span></a></li>
+                                <li><a href="/om-oss1/var-organisation-malin/ledning/" class="nav-anchor nav-anchor--local"><span>Förbundsledning</span></a></li>
+                                <li><a href="/om-oss1/var-organisation-malin/forbundsstyrelse/" class="nav-anchor nav-anchor--local"><span>Förbundsstyrelse</span></a></li>
+                                <li><a href="/om-oss1/var-organisation-malin/forbundsrevisorer/" class="nav-anchor nav-anchor--local"><span>Förbundsrevisorer</span></a></li>
+                                <li><a href="/om-oss1/var-organisation-malin/lediga-jobb/" class="nav-anchor nav-anchor--local"><span>Lediga jobb</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-children">
+                            <a href="/om-oss1/vart-forbund/" class="nav-anchor nav-anchor--local"><span>Vårt förbund</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22608" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-level-2">
+                                <li><a href="/om-oss1/vart-forbund/verksamhetsberattelse/" class="nav-anchor nav-anchor--local"><span>Verksamhetsberättelse</span></a></li>
+                                <li><a href="/om-oss1/vart-forbund/stadgar/" class="nav-anchor nav-anchor--local"><span>Stadgar</span></a></li>
+                                <li><a href="/om-oss1/vart-forbund/historia/" class="nav-anchor nav-anchor--local"><span>Historia</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-children">
+                            <a href="/om-oss1/internationellt1/" class="nav-anchor nav-anchor--local"><span>Internationell verksamhet</span></a><a aria-expanded="false" role="button" data-level="2" data-id="21681" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-level-2">
+                                <li><a href="/om-oss1/internationellt1/bistandsverksamhet/" class="nav-anchor nav-anchor--local"><span>Biståndsverksamhet</span></a></li>
+                                <li><a href="/om-oss1/internationellt1/solidaritetsfonden/" class="nav-anchor nav-anchor--local"><span>Solidaritetsfonden</span></a></li>
+                                <li><a href="/om-oss1/internationellt1/nordens-elektrikerforbund/" class="nav-anchor nav-anchor--local"><span>Nordens Elektrikerförbund</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-children">
+                            <a href="/om-oss1/press-och-information/" class="nav-anchor nav-anchor--local"><span>Press och kommunikation</span></a><a aria-expanded="false" role="button" data-level="2" data-id="22307" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-level-2">
+                                <li><a href="/om-oss1/press-och-information/kommunikationsansvariga/" class="nav-anchor nav-anchor--local"><span>Kommunikationsansvariga</span></a></li>
+                                <li><a href="/om-oss1/press-och-information/logotype-att-ladda-ner/" class="nav-anchor nav-anchor--local"><span>Logotyp att ladda ned</span></a></li>
+                                <li><a href="/om-oss1/press-och-information/portratt-att-ladda-ner/" class="nav-anchor nav-anchor--local"><span>Porträtt att ladda ner</span></a></li>
+                                <li><a href="/om-oss1/press-och-information/grafisk-profilhandbok/" class="nav-anchor nav-anchor--local"><span>Grafisk manual</span></a></li>
+                                <li><a href="/om-oss1/press-och-information/ansvarig-utgivare/" class="nav-anchor nav-anchor--local"><span>Ansvarig utgivare</span></a></li>
+                                <li><a href="/om-oss1/press-och-information/filmer/" class="nav-anchor nav-anchor--local"><span>Filmer</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-children">
+                            <a href="/om-oss1/6f/" class="nav-anchor nav-anchor--local"><span>6F</span></a><a aria-expanded="false" role="button" data-level="2" data-id="31757" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-level-2">
+                                <li><a href="/om-oss1/6f/6-f-grafisk-manual/" class="nav-anchor nav-anchor--local"><span>6F Grafisk manual</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-children nav-hidden">
+                    <a href="/kontakt/" class="nav-anchor nav-anchor--global"><span>Kontakta oss</span></a><a aria-expanded="false" role="button" data-level="1" data-id="2616" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-local nav-level-1" aria-label="Undermeny">
+                        <li class="nav-children"><a href="/kontakt/region-mitt/" class="nav-anchor nav-anchor--local"><span>Region Mitt</span></a><a aria-expanded="false" role="button" data-level="2" data-id="27744" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/kontakt/region-syd-1/" class="nav-anchor nav-anchor--local"><span>Region Syd</span></a><a aria-expanded="false" role="button" data-level="2" data-id="27746" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/kontakt/region-vast/" class="nav-anchor nav-anchor--local"><span>Region Väst</span></a><a aria-expanded="false" role="button" data-level="2" data-id="27750" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/kontakt/region-nord2/" class="nav-anchor nav-anchor--local"><span>Region Nord</span></a><a aria-expanded="false" role="button" data-level="2" data-id="27752" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                        <li class="nav-children"><a href="/kontakt/forbundskontoret/" class="nav-anchor nav-anchor--local"><span>Förbundskontoret</span></a><a aria-expanded="false" role="button" data-level="2" data-id="27778" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a></li>
+                    </ul>
+                </li>
+                <li class="nav-children nav-hidden">
+                    <a href="/avtalat-2016/" class="nav-anchor nav-anchor--global"><span>Avtal 2016</span></a><a aria-expanded="false" role="button" data-level="1" data-id="23145" class="nav-expand" href="#"><span aria-hidden="true" class="icon icon-plus2"></span>Visa undermeny</a><ul class="nav-local nav-level-1" aria-label="Undermeny">
+                        <li><a href="/avtalat-2016/avtalskrav/" class="nav-anchor nav-anchor--local"><span>Avtalskrav</span></a></li>
+                        <li><a href="/avtalat-2016/informationsmaterial/" class="nav-anchor nav-anchor--local"><span>Informationsmaterial</span></a></li>
+                        <li><a href="/avtalat-2016/avtalat/" class="nav-anchor nav-anchor--local"><span>Avtalat</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-hidden"><a href="/kontakten/" class="nav-anchor nav-anchor--global nav-anchor--last"><span>Kontakten</span></a><ul class="nav-local nav-level-1" aria-label="Undermeny"></ul></li>
+            </ul>
+
+            <ul class="nav-tools" aria-label="Verktyg">
+                <li><a lang="en" href="http://translate.google.com/translate?hl=en&amp;sl=sv&amp;u=http%3a%2f%2fwww.sef.se%2fom-oss1%2f" class="nav-tools-anchor nav-tools-translate"><span>Other languages</span></a></li>
+                <li>
+                    <a class="nav-tools-anchor" href="/fragor--svar/"><span>Frågor &amp; svar</span></a>
+                </li>
+                <li>
+                    <a class="nav-tools-anchor" target="_blank" href="http://www.elektrikernasakassa.se/"><span>A-kassan</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        <div class="container" style="padding-top:50px; padding-bottom:20px">
+            @RenderBody()
+        </div>
+    <footer class="inverted" id="footer" role="contentinfo">
+        <div class="wrap">
+            <img width="168" class="footer-logotype" alt="Svenska Elektrikerförbundet" src="http://www.sef.se/static/images/elektrikernas/logotype-footer.png">
+            <div class="grid">
+                <div class="grid-col footer-column">
+                    <div class="footer-information-block">
+                        <strong class="footer-heading">Postadress:</strong><br>
+                        <p><strong>Svenska<br></strong><strong>Elektrikerförbundet</strong></p>
+                        <p>Box 1123<br>111 81 Stockholm</p>
+                    </div>
+                </div>
+                <div class="grid-col footer-column">
+                    <div class="footer-information-block">
+                        <strong class="footer-heading">Besöksadress:</strong><br>
+                        <p>Hagagatan 2<br>111 81 Stockholm</p>
+                    </div>
+                </div>
+                <div class="grid-col footer-column">
+                    <div class="footer-information-block">
+                        <strong class="footer-heading">Kontakt:</strong><br>
+                        <p><strong>Telefonnr:</strong>&nbsp;010 - 434 05 00<br><strong>E-post:&nbsp;</strong><a href="mailto:info@forbundet.se">postbox.fk@sef.se</a></p>
+                    </div>
+                </div>
+                <div class="grid-col footer-column">
+                    <strong class="footer-heading footer-heading--social">Sociala medier:</strong>
+                    <ul class="footer-social-list">
+                        <li>
+                            <a class="footer-social-item" href="http://www.facebook.com/elektrikerna">
+                                <span aria-hidden="true" class="icon icon-facebook-badge"></span>
+                                <span class="visually-hidden">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer-social-item" href="http://www.twitter.com/elektrikerforb">
+                                <span aria-hidden="true" class="icon icon-twitter-badge"></span>
+                                <span class="visually-hidden">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="footer-social-item" href="https://www.youtube.com/channel/UCYGxbRntug006Fd_Blrz3Tg">
+                                <span aria-hidden="true" class="icon icon-youtube-badge"></span>
+                                <span class="visually-hidden">Youtube</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
